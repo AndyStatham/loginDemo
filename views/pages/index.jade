@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+	h1 登录
+	form.form-horizontal(action="/",method="post",role="form",style="width: 600px;")
+		.form-group
+			label.col-sm-3.control-label(for="firstname") 账号:
+			.col-sm-5
+				input#username.form-control(type="text", name="username", placeholder="请输入账号")
+			label.text-danger.col-sm-4.control-label(for="nameMes") #{nameMes}
+		.form-group
+			label.col-sm-3.control-label(for="lastname") 密码:
+			.col-sm-5
+				input.form-control#username(type="password",name="password",placeholder="请输入密码")
+			label.text-danger.col-sm-3.control-label(for="pwdMes") #{pwdMes}
+		.form-group
+			.col-sm-offset-3.col-sm-5
+				button.btn.btn-success(type="submit") 登录
+			.col-sm-7
+				label.text-danger.control-label(for="messageCheck") #{messageCheck}
+		.form-group
+			.col-sm-5
+				a(href="/sign") 没有帐号？ 点击注册
+
+	script(src="/javascripts/index.js")
