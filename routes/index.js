@@ -129,6 +129,13 @@ router.post('/accountDel', function(req,res) {
 
 });
 
+router.post('/sign',function(req,res,next) {
+   var name = req.body.username;
+  var pwd = req.body.password;
+  console.log(req.body);
+  console.log("name: "+name+"password: "+pwd);
+});
+
 module.exports = router;
 
 

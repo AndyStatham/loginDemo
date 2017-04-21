@@ -2,22 +2,22 @@ extends ../layout
 
 block content
 	h1 #{title}
-	form.form-horizontal(action="/sign",method="post",role="form",style="width: 600px;")
+	form.form-horizontal#register(method="post",role="form",style="width: 600px;")
 		.form-group
 			label.col-sm-3.control-label(for="firstname") 输入账号:
 			.col-sm-5
 				input#username.form-control(type="text", name="username", placeholder="请输入账号")
 		.form-group
-			label.col-sm-3.control-label(for="pw1") 输入密码:
+			label.col-sm-3.control-label(for="password") 输入密码:
 			.col-sm-5
-				input.form-control#pw1.password(type="password",name="password",placeholder="请输入密码")
+				input.form-control#password.password(type="password",name="password",placeholder="请输入密码")
 		.form-group
-			label.col-sm-3.control-label(for="pw2") 确认密码:
-			.col-sm-5
-				input.form-control#pw2.password(type="password",name="password",placeholder="请确认密码")
+			label.col-sm-3.control-label(for="password_again") 确认密码:
+			.col-sm-，
+				input.form-control#password_again(type="password",name="password",placeholder="请确认密码",onblur="upperCase()")
 		.form-group
 			.col-sm-offset-3.col-sm-5
 				button.btn.btn-success(type="submit") 注册
 			.col-sm-7
-				label.text-danger.control-label(for="messageCheck") #{messageCheck}
+				label.text-danger.control-label#messageCheck(for="messageCheck")
 	script(src="/javascripts/sign.js")
